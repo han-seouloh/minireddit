@@ -21,8 +21,8 @@ export const SearchBar = () => {
   return (
     <div id='searchbar' className={styles.header}>
       {menu
-        ? <BiMenuAltLeft onClick={handleMenuClick} className={styles.menuButton} />
-        : <BiMenu onClick={handleMenuClick} className={styles.menuButton} />
+        ?  <BiMenu onClick={handleMenuClick} className={styles.menuButton}/>
+        : <BiMenuAltLeft onClick={handleMenuClick} className={styles.menuButton} />
       }
       <a href='#top' className={styles.logo}> {/*Remember to fill in href*/}
         <FaReddit className={styles.logoIcon} />
