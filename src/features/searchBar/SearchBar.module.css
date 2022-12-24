@@ -70,8 +70,23 @@
 .submit:hover {
   color: var(--main-red);
   cursor: pointer;
+  transform: scale(1.1);
+  transition: transform 300ms;
 }
 
 .submit:active {
   color: purple;
+}
+
+/*Menu Button*/
+
+.menuButton {
+  color: var(--main-red);
+  font-size: 2rem;
+}
+
+.menuButton:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: transform 300ms;
 }
