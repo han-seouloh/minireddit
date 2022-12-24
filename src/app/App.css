@@ -1,14 +1,5 @@
-.App {
-  height: 100vh; /*Change later*/
-  width: 100vw; /*Change later*/
-}
-
-.hideSearchBar {
-  transform: translateY(-100%);
-  box-shadow: none !important; 
-  transition: transform .5s, box-shadow 1s;
-}
-
-.returnSearchBar {
-  transition: all 0.5s;
+main {
+  width: 100vw;
+  height: 500vh;
+  background-color: blue;
 }

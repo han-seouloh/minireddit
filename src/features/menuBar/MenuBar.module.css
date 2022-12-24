@@ -1,0 +1,62 @@
+/*MenuBar*/
+.menuBar {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  background-color: transparent;
+  width: 25rem;
+  height: 100vh;
+  transform: translate(-100%);
+}
+
+.hideMenuBar {
+  transform: translateX(-100%);
+  transition: transform 1s;
+}
+
+.returnMenuBar {
+  transform: translateX(0);
+  transition: transform 1s;
+}
+
+.hide-menu {
+  display: flex;
+  width: 100%;
+  padding: 1rem 1rem;
+  justify-content: flex-end;
+  background-color: var(--main-red);
+}
+
+.subreddit-menu {
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-red);
+  opacity: 0.5;
+}
+
+
+/*Arrow*/
+.arrowIcon {
+  color: white;
+  font-size: 2rem;
+}
+
+.arrowIcon:hover {
+  cursor: pointer;
+  animation-name: arrow;
+  animation-timing-function: ease-out;
+  animation-duration: 1.3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes arrow {
+  0% {
+    transform: translateX(0) scale(1.5);
+  }
+  50% {
+    transform: translateX(-30%) scale(1.5);
+  }
+  100% {
+    transform: translateX(0) scale(1.5);
+  }
+}
