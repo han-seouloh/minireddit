@@ -28,10 +28,12 @@
 }
 
 .subreddit-menu {
+  display: inline-flex;
+  flex-flow: column;
+  align-items: center;
   width: 100%;
   height: 100%;
-  background-color: var(--main-red);
-  opacity: 0.5;
+  background-color: rgba(255, 0, 0, 0.6);
 }
 
 
