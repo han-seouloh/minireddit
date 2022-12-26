@@ -60,7 +60,7 @@ export const SearchBar = () => {
       <BiMenu onClick={handleMenuClick} className={styles.menuButton}/>
       <a href='#top' className={styles.logo}> {/*Remember to fill in href*/}
         <FaReddit className={styles.logoIcon} />
-        <span>MINI</span>Reddit
+        <span>MINI</span>reddit
       </a>
       <form className={styles.form}>
         <input type='text' placeholder="Search" className={styles.searchBar}/>
