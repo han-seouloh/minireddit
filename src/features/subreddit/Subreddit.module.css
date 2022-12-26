@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+.subreddit-container {
+  display: flex;
+  height: 4rem;
+  width: 90%;
+  margin:0.5rem;
+  padding: 1rem;
+  align-items: center;
+  background-color: white;
+  color: black;
+  border: 2px solid var(--light-gray);
+  border-radius: 1rem;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1.1rem;
+}
+
+.subreddit-container:hover {
+  cursor: pointer;
+  color: var(--main-red);
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 2px solid var(--main-red);
+  transform: scale(1.02);
+  transition: all 0.2s;
+}
+
+.icon-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.2rem;
+  aspect-ratio: 1/1;
+  border-radius: 1.1rem;
+  background-color: var(--main-red);
+  margin-right: 2rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  color:white;
+}
