@@ -6,17 +6,16 @@
   background-color: transparent;
   width: 25rem;
   height: 100vh;
-  transform: translate(-100%);
 }
 
 .hideMenuBar {
   transform: translateX(-100%);
-  transition: transform 1s;
+  transition: transform 0.7s;
 }
 
 .returnMenuBar {
   transform: translateX(0);
-  transition: transform 1s;
+  transition: transform 0.7s;
 }
 
 .hide-menu {
@@ -27,15 +26,28 @@
   background-color: var(--main-red);
 }
 
+.about-menu {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  height: 50vh;
+  width: 100%;
+  background-color: rgba(255, 0, 0, 0.6);
+}
+
 .subreddit-menu {
   display: inline-flex;
   flex-flow: column;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 50vh - 4rem);
   background-color: rgba(255, 0, 0, 0.6);
+  overflow-y: scroll;
 }
 
+.subreddit-menu::-webkit-scrollbar{
+  display: none;
+}
 
 /*Arrow*/
 .arrowIcon {
