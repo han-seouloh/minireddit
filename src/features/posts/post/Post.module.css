@@ -1,10 +1,13 @@
-.loading-post-container {
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+.post-container {
   width: 50rem;
+  margin-bottom: 2rem;
   padding: 1rem;
   border-radius: 2rem;
   box-shadow: 0 0 1rem var(--light-gray);
   display: grid;
-  grid: 4rem repeat(4, 1fr) 4rem / repeat(8, 1fr);
+  grid: minmax(min-content, max-content) repeat(4, 1fr) 4rem / repeat(8, 1fr);
   gap: 1rem 1rem;
   grid-template-areas: 
     'vote title title title title title title title'
@@ -18,27 +21,26 @@
 .title-container {
   grid-area: title;
   border-radius: 1rem;
-  animation-name: loading;
-  animation-duration: 1.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  padding-top: 1rem;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1.5rem;
+  color: var(--main-red);
 }
 
 .content-container {
   grid-area: content;
+}
+
+.media-container {
+  display: flex;
+  width: 100%;
   border-radius: 1rem;
-  background: repeating-linear-gradient(
-    45deg, var(--light-gray),
-    var(--light-gray) 35%,
-    lightgray 50%,
-    var(--light-gray) 65%,
-    var(--light-gray) 100%
-  );
-  background-size: 100% 1000%;
-  animation-name: loading;
-  animation-duration: 1.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  overflow: hidden;
+}
+
+.text-display {
+  width: 100%;
+  font-size: 1rem;
 }
 
 .upvotes-container {
@@ -48,9 +50,13 @@
   display: inline-flex;
   flex-flow: column;
   align-items: center;
-  padding: 3rem 0;
-  font-size: 1rem;
+  padding: 100% 0;
+  font-size: 1.5rem;
   color: gray;
+}
+
+.upvote-count {
+  font-size: 1rem;
 }
 
 .period-loading {
@@ -64,7 +70,7 @@
   align-items: center;
 }
 
-.comment-container {
+.data-container {
   grid-area: comment;
   border: 1px solid var(--light-gray);
   border-radius: 1rem;
@@ -78,43 +84,38 @@
 
 .subreddit-display {
   height: 1rem;
-  aspect-ratio: 15/1;
-  border-radius: 0.5rem;
-  background: repeating-linear-gradient(
-    45deg, var(--light-gray),
-    var(--light-gray) 35%,
-    lightgray 50%,
-    var(--light-gray) 65%,
-    var(--light-gray) 100%
-  );
-  background-size: 100% 2500%;
-  animation-name: loading;
-  animation-duration: 1.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  font-size: 0.8rem;
+}
+
+.subreddit-display span {
+  color: red;
+}
+
+.stats-container {
+  display: flex;
+  align-items: center;
+  width: fit-content;
 }
 
 .time-display {
   height: 1rem;
-  aspect-ratio: 5/1;
-  border-radius: 0.5rem;
-  margin-left: 8rem;
-  background: repeating-linear-gradient(
-    45deg, var(--light-gray),
-    var(--light-gray) 35%,
-    lightgray 50%,
-    var(--light-gray) 65%,
-    var(--light-gray) 100%
-  );
-  background-size: 100% 1000%;
-  animation-name: loading;
-  animation-duration: 1.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  margin-right: 3rem;
+  font-size: 0.8rem;
 }
 
-.comments-icon{
-  margin-left: 2rem;
+.comments-container {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.comments-icon {
+  margin-right: 1rem;
+}
+
+.comments-icon:hover {
+  color: red;
+  cursor: pointer;
 }
 
 /*Animations*/

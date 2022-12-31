@@ -1,31 +1,41 @@
 import { TiArrowUpOutline, TiArrowDownOutline } from 'react-icons/ti';
 import { BiCommentDetail } from 'react-icons/bi';
-import { useSelector } from 'react-redux';
-import { selectPosts } from '../../../store/postsSlice';
+import { formatNum } from '../../../utils/formatNum';
+import { Media } from '../media/Media';
+import moment from 'moment';
 import styles from './Post.module.css'
 
-export const Post = () => {
-  const {posts, selectedPost, hasError} = useSelector(selectPosts);
+moment.updateLocale('en', {
+  relativeTime : {
+      mm: "%d mins",
+      hh: "%d hrs",
+  }
+});
+
+export const Post = ({data}) => {
 
   return (
-    <div className={styles['loading-post-container']}>
-      <div className={styles['title-container']}>{'something'}</div>
+    <div className={styles['post-container']}>
+      <div className={styles['title-container']}>{data.title}</div>
       <div className={styles['content-container']}>
-        <img 
-          src={''} 
-          alt={``}
-          className={styles['image-display']}
-        />
+        <div className={styles['media-container']}>
+          <Media data={data} />
+        </div>
+        <p className={styles['text-display']}>{data.selftext}</p>
       </div>
-      <div className={styles['comment-container']}>
-        <div className={styles['subreddit-display']}></div>
-        <div className={styles['time-display']}></div>
-          <BiCommentDetail className={styles['comments-icon']}/>
-          <p className={styles['period-loading']}>{/*2.5k*/}</p>
+      <div className={styles['data-container']}>
+        <p className={styles['subreddit-display']}>Posted by <span>{data.author}</span> at <span>{data['subreddit_name_prefixed']}</span></p>
+        <div className={styles['stats-container']}>
+          <p className={styles['time-display']}>{moment.unix(data.created).fromNow()}</p>
+          <div className={styles['comments-container']}>
+            <BiCommentDetail className={styles['comments-icon']}/>
+            <p className={styles['comments-count']}>{formatNum(data.num_comments)}</p>
+          </div>
+        </div>
       </div>
       <div className={styles['upvotes-container']}>
         <TiArrowUpOutline />
-        <p className={styles['period-loading']}>{/*2.5k*/}</p>
+        <p className={styles['upvote-count']}>{formatNum(data.ups)}</p>
         <TiArrowDownOutline />
       </div>
     </div>
