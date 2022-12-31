@@ -19,7 +19,8 @@ const subreddits = [
   'todayilearned',
   'nottheonion',
   'showerthoughts',
-  'relationship_advice'
+  'relationship_advice',
+  'pics'
 ];
 
 export const MenuBar = () => {
@@ -39,7 +40,7 @@ export const MenuBar = () => {
         <About />
       </div>
       <div className={styles['subreddit-menu']} >
-        {subreddits.map(sub => <Subreddit subname={sub} />)}
+        {subreddits.map((sub, index) => <Subreddit subname={sub} key={index}/>)}
       </div>
     </div>
   );
