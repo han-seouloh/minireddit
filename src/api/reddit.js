@@ -14,9 +14,9 @@ export const getSubreddit = createAsyncThunk(
     };
     
     const response = await fetch (`https://www.reddit.com/r/${subreddit}/about.json`);
-    const data = await response.json();
+    const json = await response.json();
 
-    if (!data.data) {
+    if (!json.data) {
       return {
         display_name: subreddit,
 				public_description:
@@ -26,6 +26,16 @@ export const getSubreddit = createAsyncThunk(
       };
     };
 
-    return data.data;
+    return json.data;
+  }
+);
+
+export const getPosts = createAsyncThunk(
+  'subreddit/getPosts',
+  async ({subreddit, time}) => {
+    const response = await fetch(`https://www.reddit.com/r/${subreddit}/top/.json?t=${time}`);
+    const json = await response.json();
+
+    return json.data.children.map(post => post.data);
   }
 );
