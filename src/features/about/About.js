@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {selectSubreddit} from '../../store/subredditSlice';
 import { getSubreddit } from '../../api/reddit';
+import {Time} from '../time/Time';
 import styles from './About.module.css';
 import { FaReddit } from 'react-icons/fa';
 
@@ -36,6 +37,7 @@ export const About = () => {
         <h2 className={styles['about-header']}>About</h2>
         <p className={styles['about-text']}>{subredditInfo.public_description}</p>
       </div>
+      <Time />
     </div>
   );
 }
