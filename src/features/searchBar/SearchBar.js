@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { toggleMenu } from '../menuBar/menuBarSlice';
+import { searchPosts } from '../../api/reddit';
 
 //Icons
 import { FaReddit } from 'react-icons/fa';
@@ -13,6 +14,7 @@ import styles from './SearchBar.module.css';
 export const SearchBar = () => {
   const [visibility, setVisibility] = useState(true);
   const [scrollDir, setScrollDir] = useState("down");
+  const [query, setQuery] = useState('');
   const dispatch = useDispatch();
 
   /*useEffect Hook*/
@@ -55,16 +57,28 @@ export const SearchBar = () => {
     dispatch(toggleMenu());
   }
 
+  const handleChange = ({target}) => {
+    setQuery(target.value);
+  }
+
+  const handleSearchClick = (e) => {
+    e.preventDefault();
+    if (query) {
+      dispatch(searchPosts(query));
+      setQuery('');
+    }
+  }
+
   return (
     <div id='searchbar' className={`${styles.searchBarContainer} ${visibility ? styles.returnSearchBar : styles.hideSearchBar }`}>
       <BiMenu onClick={handleMenuClick} className={styles.menuButton}/>
-      <a href='#top' className={styles.logo}> {/*Remember to fill in href*/}
+      <a href='#top' className={styles.logo}>
         <FaReddit className={styles.logoIcon} />
         <span>MINI</span>reddit
       </a>
       <form className={styles.form}>
-        <input type='text' placeholder="Search" className={styles.searchBar}/>
-        <button type='submit' className={styles.submit}>
+        <input type='text' placeholder="Search" className={styles.searchBar} onChange={handleChange}/>
+        <button type='submit' className={styles.submit} onClick={handleSearchClick}>
           <HiOutlineSearch />
         </button>
       </form>
