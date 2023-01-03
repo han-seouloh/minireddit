@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getPosts } from "../api/reddit";
+import { searchPosts } from "../api/reddit";
 
 export const postsSlice = createSlice({
   name: 'posts',
   initialState: {
     posts: [],
     selectedPost: null,
-    time: 'now',
+    time: 'hour',
     isLoading: false,
     hasError: false
   },
@@ -30,6 +31,20 @@ export const postsSlice = createSlice({
       state.selectedPost = action.payload[0].id;
     },
     [getPosts.rejected]: (state) => {
+      state.isLoading = false;
+      state.hasError = true;
+    },
+    [searchPosts.pending]: (state) => {
+      state.isLoading = true;
+      state.hasError = false;
+    },
+    [searchPosts.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.hasError = false;
+      state.posts = action.payload;
+      state.selectedPost = action.payload[0].id;
+    },
+    [searchPosts.rejected]: (state) => {
       state.isLoading = false;
       state.hasError = true;
     }
