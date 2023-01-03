@@ -77,7 +77,7 @@ export const SearchBar = () => {
         <span>MINI</span>reddit
       </a>
       <form className={styles.form}>
-        <input type='text' placeholder="Search" className={styles.searchBar} onChange={handleChange}/>
+        <input type='text' placeholder="Search" className={styles.searchBar} onChange={handleChange} value={query}/>
         <button type='submit' className={styles.submit} onClick={handleSearchClick}>
           <HiOutlineSearch />
         </button>
