@@ -31,9 +31,19 @@ export const getSubreddit = createAsyncThunk(
 );
 
 export const getPosts = createAsyncThunk(
-  'subreddit/getPosts',
+  'posts/getPosts',
   async ({subreddit, time}) => {
     const response = await fetch(`https://www.reddit.com/r/${subreddit}/top/.json?t=${time}`);
+    const json = await response.json();
+
+    return json.data.children.map(post => post.data);
+  }
+);
+
+export const searchPosts = createAsyncThunk(
+  'posts/searchPosts',
+  async (query) => {
+    const response = await fetch(`https://www.reddit.com/r/all/search.json?q=${query}&limit=50`);
     const json = await response.json();
 
     return json.data.children.map(post => post.data);
