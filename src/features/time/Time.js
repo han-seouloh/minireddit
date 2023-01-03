@@ -10,7 +10,7 @@ export const Time = () => {
 
   return (
     <select name='time' className={styles['dropdown']} onChange={handleChange}>
-      <option value='now'>Now</option>
+      <option value='hour'>Now</option>
       <option value='day'>Day</option>
       <option value='month'>Month</option>
       <option value='year'>Year</option>
