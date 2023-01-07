@@ -9,24 +9,23 @@ import { selectPosts } from '../../store/postsSlice';
 
 export const Posts = () => {
   const {subreddit} = useSelector(selectSubreddit);
-  const {posts, time, selectedPost, isLoading, hasError} = useSelector(selectPosts);
+  const {posts, time, isLoading} = useSelector(selectPosts);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getPosts({subreddit, time}))
+    dispatch(getPosts({subreddit, time}));
   },[subreddit, time, dispatch]);
 
   return (
     <div className={styles['posts-container']}>
       {isLoading
         ? (
-          <div>
-            <LoadingPost />
+          <div >
             <LoadingPost />
             <LoadingPost />
           </div>
         )
-        : posts.map(post => (<Post data={post} key={post.id} />)) 
+        : posts.map(post => <Post data={post} key={post.id} />) 
       }
     </div>
   );
