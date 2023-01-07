@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400&family=Varela+Round&display=swap');
+
+.comment-container {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--light-gray);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10rem;
+  color: red;
+  background-color: white;
+  overflow: hidden;
+  width: 2rem;
+  aspect-ratio: 1/1;
+  border-radius: 1rem;
+}
+
+.user {
+  height: 1.5rem;
+  color: var(--main-red);
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1rem;
+}
+
+.comment {
+  padding: 0 1rem 1rem 1rem;
+  font-family: 'Nunito Sans', sans-serif;
+}

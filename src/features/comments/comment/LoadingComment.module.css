@@ -1,0 +1,78 @@
+.comment-container {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--light-gray);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10rem;
+  color: white;
+  background-color: red;
+  overflow: hidden;
+  width: 2rem;
+  aspect-ratio: 1/1;
+  border: 1px solid var(--light-gray);
+  border-radius: 1rem;
+}
+
+.user {
+  height: 1rem;
+  width: 8rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 0.5rem;
+  background: repeating-linear-gradient(
+    45deg, var(--light-gray),
+    var(--light-gray) 35%,
+    red 50%,
+    var(--light-gray) 65%,
+    var(--light-gray) 100%
+  );
+  background-size: 100% 10000%;
+  animation-name: loading;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.comment {
+  height: 1rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 0.5rem;
+  background: repeating-linear-gradient(
+    45deg, var(--light-gray),
+    var(--light-gray) 35%,
+    red 50%,
+    var(--light-gray) 65%,
+    var(--light-gray) 100%
+  );
+  background-size: 100% 10000%;
+  animation-name: loading;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/*Animations*/
+@keyframes loading {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
