@@ -8,7 +8,7 @@
   font-size: 16px;
   --main-red: red;
   --light-gray: rgb(187, 187, 187);
-
+  scroll-behavior: smooth;
 }
 
 body {
