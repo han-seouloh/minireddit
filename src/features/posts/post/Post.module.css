@@ -16,6 +16,7 @@
     'vote content content content content content content content'
     'vote content content content content content content content'
     'vote comment comment comment comment comment comment comment';
+  grid-auto-rows: auto;
 }
 
 .title-container {
@@ -40,7 +41,9 @@
 
 .text-display {
   width: 100%;
+  padding: 0 1rem;
   font-size: 1rem;
+  word-break: break-all;
 }
 
 .upvotes-container {
