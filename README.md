@@ -111,6 +111,9 @@ These are loading components that I designed to be displayed while the fetch req
 # Acknowledgements
 These other dependencies used to build this project:
 - react-icons
+- [Reddit JSON Api](https://github.com/reddit-archive/reddit/wiki/JSON)
+
+This project was the final portfolio project for the frontend portion of the full-stack engineer course path offered by [Codecademy](https://www.codecademy.com). The goal of the project was to showcase all the skills and technologies learned up to that point, including HTML / CSS, JavaScript, React, Redux, Git and Github Projects, Command line, and Wireframes.
 
 # Future Updates
 In the future, if I have time, I plan to enhance this project by adding more features to improve the user experience. Some of these features include 
