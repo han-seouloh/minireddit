@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# MINIreddit <!-- omit in toc -->
+## Table of Contents <!-- omit in toc -->
+- [Introduction](#introduction)
+- [Codebase](#codebase)
+  - [Technologies](#technologies)
+  - [Folder Structure](#folder-structure)
+  - [Setup Process](#setup-process)
+- [Features](#features)
+  - [Side Menu](#side-menu)
+  - [Time Filter Functionality](#time-filter-functionality)
+  - [Search Functionality](#search-functionality)
+  - [Post and Comments Loading Component](#post-and-comments-loading-component)
+- [Acknowledgements](#acknowledgements)
+- [Future Updates](#future-updates)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Introduction
+**MINIreddit** is a single-page React application with a simple, minimalist interface designed for browsing Reddit posts and comments from pre-selected subreddits by fetching data from the Reddit JSON API. I built this as a personal project to practice my **React and Redux** skills. I mainly used **Redux's Async Middleware** to connect to and fetch data from APIs. Additionally, I practiced scraping the incoming data from the API to extract the specific information needed for the Reddit client.
 
-## Available Scripts
+<br />
+<p align="center">
+  <img 
+    src="./src/resources/general.gif"
+    alt="First Look"
+  />
+</p>
+<br />
 
-In the project directory, you can run:
+# Codebase
+## Technologies
+This codebase consists of JavaScript, HTML and CSS.
 
-### `npm start`
+Frameworks/Libraries Used:
+- ReactJS
+- Redux
+<br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Folder Structure
+```sh
+minireddit/
+├── public                  # Public files
+└── src                     # Source files
+minireddit/src
+├── api                     # Files concerning conecting to API
+├── app                     # App files
+├── components              # Reusable components
+├── features                # Feature components
+├── resources               # Resources
+├── store                   # Redux store and slices
+└── utils                   # Utility functions
+```
+<br />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup Process
+- Clone or download the repo
+- Open the directory and run `npm install` to install
+- Run development application by using `npm start`
+<br />
 
-### `npm test`
+# Features
+## Side Menu
+The side menu is the primary method for navigating between predefined subreddits and selecting the timeframe for posts. The displayed posts are the top 25 posts filtered by the selected time: day, month, year, or all time. Additionally, this component displays a brief description of the selected subreddit.
+<br />
+<p align="center">
+  <img 
+    src="./src/resources/side.gif"
+    alt="Side Menu"
+  />
+</p>
+<br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Time Filter Functionality
+As mentioned in the previous section, the Reddit client features a time selector that allows users to filter displayed posts based on their timeframe. Users can choose to see the top 25 posts of the day, month, year, or all time for the selected subreddit. This provides a convenient way to browse the most popular posts within a specific timeframe.
+<br />
+<p align="center">
+  <img 
+    src="./src/resources/time.gif"
+    alt="Time Filter"
+  />
+</p>
+<br />
 
-### `npm run build`
+## Search Functionality
+The Reddit client also includes a simple search functionality. When the user clicks "enter" or "submit" after entering a search term in the search bar, the client makes a call to the Reddit API to retrieve up to 50 posts from an endpoint that matches the user's search query.
+<br />
+<p align="center">
+  <img 
+    src="./src/resources/search.gif"
+    alt="Search"
+  />
+</p>
+<br />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Post and Comments Loading Component
+These are loading components that I designed to be displayed while the fetch request to the Reddit API is being handled in order to load the posts and, when clicked on, the comments of the post the user wants to read.
+<br />
+<p align="center">
+  <img 
+    src="./src/resources/loading1.gif"
+    alt="Loading Component"
+  />
+</p>
+<br />
+<p align="center">
+  <img 
+    src="./src/resources/loading2.gif"
+    alt="Loading Component"
+  />
+</p>
+<br />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Acknowledgements
+These other dependencies used to build this project:
+- react-icons
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Future Updates
+In the future, if I have time, I plan to enhance this project by adding more features to improve the user experience. Some of these features include 
+- [ ] Being able to vote for posts and comments
+- [ ] Adding the ability to comment on posts
+- [ ] Displaying each user's Reddit avatar in the comments section.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+These additional features will make the Reddit client more interactive and engaging for users.
