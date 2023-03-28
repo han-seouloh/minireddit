@@ -24,6 +24,10 @@
   />
 </p>
 <br />
+<p align="center">
+  <a href='https://minireddit-client.netlify.app/' >Visit Live Site</a>
+</p>
+<br />
 
 # Codebase
 ## Technologies
